@@ -2,6 +2,7 @@
 
   var binPath = require('phantomjs').path;
   var execFile = require('child_process').execFile;
+  var extend = require('util')._extend;
   var path = require('path');
 
   var DEFAULT_BUFFER_SIZE = 800*1024;
@@ -24,30 +25,37 @@
 
     // Fall back to defaults if no options or callbacks are provided.
     if (typeof options === 'undefined' && typeof cb === 'undefined') {
-      options = {};
       cb = defaultCb;
     }
     // Fall back to default options if only callback is provided.
     if (typeof options === 'function') {
       cb = options;
-      options = {};
     }
 
-    var width = 1200;
-    var height = 900;
-    var excludeSelectors = options.excludeSelectors || [];
-    var includeSelectors = options.includeSelectors || [];
+    // Process config options.
+    var defaults = {
+      width: 1200,
+      height: 900,
+      excludeSelectors: [],
+      enabledOrigins: [],
+      keepInlineStyles: false,
+      ignoreConsole: true,
+      maxBuffer: DEFAULT_BUFFER_SIZE
+    };
+    var config = extend(defaults, options);
 
     var childArgs = [
       path.resolve(path.join(__dirname, 'lib', 'runner.js')),
       url,
-      width,
-      height,
-      JSON.stringify(excludeSelectors),
-      JSON.stringify(includeSelectors)
+      config.width,
+      config.height,
+      JSON.stringify(config.excludeSelectors),
+      JSON.stringify(config.enabledHosts),
+      config.keepInlineStyles,
+      (config.ignoreConsole) ? '--ignoreConsole' : false
     ];
     var phantomOptions = {
-      maxBuffer: options.buffer || DEFAULT_BUFFER_SIZE
+      maxBuffer: config.maxBuffer
     };
 
     // Call PhantomJS with our runner script.
