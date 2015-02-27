@@ -61,7 +61,7 @@
     // Call PhantomJS with our runner script.
     execFile(binPath, childArgs, phantomOptions, function(err, stdout, stderr) {
       if (err) {
-        console.log('Something is awry wrong with phantomjs...');
+        console.log('Something is awry with phantomjs...');
         if (stderr) {
           err.message = stderr;
         }
