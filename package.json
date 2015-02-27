@@ -1,0 +1,23 @@
+{
+  "name": "critical-css",
+  "description": "Detects Above the Fold styles on sites and assembles a stylesheet of them.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/attila/critical-css",
+  "author": {
+    "name": "Attila Beregszaszi",
+    "email": "hello@frontseed.com",
+    "url": "http://frontseed.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/attila/critical-css.git"
+  },
+  "main": "./critical-css.js",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "dependencies": {
+    "phantomjs": "1.9.7"
+  },
+  "readmeFilename": "README.md"
+}
