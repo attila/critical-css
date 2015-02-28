@@ -50,7 +50,7 @@
       config.width,
       config.height,
       JSON.stringify(config.excludeSelectors),
-      JSON.stringify(config.enabledHosts),
+      JSON.stringify(config.enabledOrigins),
       config.keepInlineStyles,
       (config.ignoreConsole) ? '--ignoreConsole' : false
     ];
