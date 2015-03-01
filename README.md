@@ -7,17 +7,12 @@ fold CSS in the headless browser.
 
 ## How it works
 
-The module runs phantomjs as a headless browser to open the webpage and run the
-injected parser script. It will then return its output made available in a
-callback.
+The module opens the supplied URL and runs a parser script which returns the
+stylesheet consisting critical style rules. This can be further processed in a
+callback function.
 
-Operation is not limited to checking a single stylesheet as the parser
-script is injected to and runs in the browser.
-
-## Dependencies
-
-This uses [phantomjs](http://phantomjs.org/) as a headless browser to open the
-webpage and run the injected parser script.
+Operation is not limited to checking a single stylesheet as the parser script is
+injected to and runs in [phantomjs](http://phantomjs.org/).
 
 ## Quick Start
 
