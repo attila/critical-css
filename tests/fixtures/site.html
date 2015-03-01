@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test site</title>
+  <meta charset="utf8">
+  <style>
+    body.inline {
+      background-color: #fff;
+    }
+  </style>
+  <link href="./styles.css" rel="stylesheet">
+</head>
+<body class="inline">
+
+  <p id="up">This content should be above the fold.</p>
+  <p id="down">This text should be below the fold most of the time.</p>
+
+  <script>
+    if (document.location.hash === '#log') {
+      console.log('test message');
+    }
+    if (document.location.hash === '#fail') {
+      throw 'fail!';
+    }
+  </script>
+</body>
+</html>

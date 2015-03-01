@@ -12,7 +12,11 @@
    */
   exports.generate = function(url, options, cb) {
     if (typeof url === 'undefined') {
-      throw new Error('Missing url parameter.');
+      throw new TypeError('Missing url parameter.');
+    }
+
+    if (typeof url !== 'string') {
+      throw new TypeError('url should be a string.');
     }
 
     // Default callback function for handling phantomjs returns.
@@ -38,18 +42,15 @@
     if (typeof options === 'undefined' && typeof cb === 'undefined') {
       cb = defaultCb;
       options = {};
-      console.log('fall back to default options, default callback');
     }
     // Fall back to default options if only callback is provided.
     if (typeof options === 'function' && typeof cb === 'undefined') {
       cb = options;
       options = {};
-      console.log('fall back to default options');
     }
     // Fall back to default callback if only options are provided.
     if (typeof cb === 'undefined') {
       cb = defaultCb;
-      console.log('fall back to default callback');
     }
 
     var config = extend(defaults, options);
@@ -71,9 +72,9 @@
     // Call PhantomJS with our runner script.
     execFile(binPath, childArgs, phantomOptions, function(err, stdout, stderr) {
       if (err) {
-        console.log('Something is awry with phantomjs...');
+        err.message = 'Something is awry with phantomjs...\u000a';
         if (stderr) {
-          err.message = stderr;
+          err.message += stderr;
         }
         cb(err, null);
       }

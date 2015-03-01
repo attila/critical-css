@@ -1,0 +1,18 @@
+body {
+  position: relative;
+}
+p:first-child {
+  text-align: center;
+}
+#down {
+  position: absolute;
+  top: 4000px;
+}
+#up::before {
+  display: block;
+  content: "CSS before content";
+}
+#up::after {
+  display: block;
+  content: "CSS after content";
+}
