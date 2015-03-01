@@ -21,7 +21,7 @@ webpage and run the injected parser script.
 
 ## Quick Start
 
-Install the module via npm: `npm install criticalcss`
+Install the module via npm: `npm install critical-css`
 
 ```javascript
 var criticalCss = require('critical-css');
