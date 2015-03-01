@@ -1,4 +1,4 @@
-(function(module) {
+(function(exports) {
 
   var binPath = require('phantomjs').path;
   var execFile = require('child_process').execFile;
@@ -10,7 +10,7 @@
   /**
    * Run the the parser through phantom.
    */
-  module.exports = function(url, options, cb) {
+  exports.generate = function(url, options, cb) {
     if (typeof url === 'undefined') {
       throw new Error('Missing url parameter.');
     }
@@ -20,7 +20,7 @@
       if (err) {
         throw new Error(err);
       }
-      return output;
+      console.log(output);
     };
 
     // Fall back to defaults if no options or callbacks are provided.
@@ -73,4 +73,4 @@
     });
   };
 
-}(typeof module === "object" && typeof module.exports === "object" && module || this));
+}(typeof exports === 'object' && exports || this));
