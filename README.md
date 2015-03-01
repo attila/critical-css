@@ -1,5 +1,7 @@
 # Critical CSS
 
+[![Build Status](https://api.travis-ci.org/attila/critical-css.svg?branch=master)](https://travis-ci.org/attila/critical-css)
+
 Detects Above the Fold styles on sites and assembles a stylesheet of them.
 
 Opens any web page on an accessible URL and runs a parser to detect above the
@@ -146,13 +148,14 @@ child process (i.e the headless browser).
 ## Contributing
 
 This project is under active development.
-New features, tests and examples are in the works now.
+New features, more tests and examples are in the works now.
 
 Please head over to the issue queue to add suggestions or file bug reports.
 
 
 ## Changelog
 
+* 0.2.0 - Refined error handling; now equipped with a basic unit test suite
 * 0.1.1 - Fixed a bug with the arguments parsing logic
 * 0.1.0 - Initial release
 
@@ -161,6 +164,8 @@ Please head over to the issue queue to add suggestions or file bug reports.
 
 Copyright (c) 2015 Attila Beregszaszi
 Licensed under the MIT license.
+
+## Plug
 
 Development was sponsored by [Front Seed Labs](http://frontseed.com/) and
 [Dennis Publishing](http://www.dennis.co.uk/)
