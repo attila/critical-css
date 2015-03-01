@@ -153,6 +153,7 @@ Please head over to the issue queue to add suggestions or file bug reports.
 
 ## Changelog
 
+* 0.1.1 - Fixed a bug with the arguments parsing logic
 * 0.1.0 - Initial release
 
 
