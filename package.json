@@ -16,12 +16,18 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "phantomjs": "~1.9.7",
+    "phantomjs": "1.9.8",
     "xtend": "^4.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no tests specified yet.\" && exit 1"
+    "test": "grunt test"
   },
   "readmeFilename": "README.md",
   "keywords": [
