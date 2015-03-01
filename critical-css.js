@@ -2,7 +2,7 @@
 
   var binPath = require('phantomjs').path;
   var execFile = require('child_process').execFile;
-  var extend = require('util')._extend;
+  var extend = require('xtend');
   var path = require('path');
 
   var DEFAULT_BUFFER_SIZE = 800*1024;
@@ -23,15 +23,6 @@
       console.log(output);
     };
 
-    // Fall back to defaults if no options or callbacks are provided.
-    if (typeof options === 'undefined' && typeof cb === 'undefined') {
-      cb = defaultCb;
-    }
-    // Fall back to default options if only callback is provided.
-    if (typeof options === 'function') {
-      cb = options;
-    }
-
     // Process config options.
     var defaults = {
       width: 1200,
@@ -42,6 +33,25 @@
       ignoreConsole: true,
       maxBuffer: DEFAULT_BUFFER_SIZE
     };
+
+    // Fall back to defaults if no options or callbacks are provided.
+    if (typeof options === 'undefined' && typeof cb === 'undefined') {
+      cb = defaultCb;
+      options = {};
+      console.log('fall back to default options, default callback');
+    }
+    // Fall back to default options if only callback is provided.
+    if (typeof options === 'function' && typeof cb === 'undefined') {
+      cb = options;
+      options = {};
+      console.log('fall back to default options');
+    }
+    // Fall back to default callback if only options are provided.
+    if (typeof cb === 'undefined') {
+      cb = defaultCb;
+      console.log('fall back to default callback');
+    }
+
     var config = extend(defaults, options);
 
     var childArgs = [
