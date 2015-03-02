@@ -16,6 +16,10 @@ callback function.
 Operation is not limited to checking a single stylesheet as the parser script is
 injected to and runs in [phantomjs](http://phantomjs.org/).
 
+## Automation options
+
+The Grunt plugin [grunt-critical-css](https://github.com/attila/grunt-critical-css) uses this module.
+
 ## Quick Start
 
 Install the module via npm: `npm install critical-css`
