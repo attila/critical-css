@@ -16,7 +16,7 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "phantomjs": "1.9.8",
+    "phantomjs": "1.9.11",
     "xtend": "^4.0.0"
   },
   "devDependencies": {
