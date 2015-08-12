@@ -149,6 +149,13 @@ An optional callback function with `output` being the value of `stdout` from the
 child process (i.e the headless browser).
 
 
+## Changelog
+
+* 0.2.0 - Refined error handling; now equipped with a basic unit test suite
+* 0.1.1 - Fixed a bug with the arguments parsing logic
+* 0.1.0 - Initial release
+
+
 ## Contributing
 
 This project is under active development.
@@ -157,19 +164,8 @@ New features, more tests and examples are in the works now.
 Please head over to the issue queue to add suggestions or file bug reports.
 
 
-## Changelog
+## Development
 
-* 0.2.0 - Refined error handling; now equipped with a basic unit test suite
-* 0.1.1 - Fixed a bug with the arguments parsing logic
-* 0.1.0 - Initial release
+Project led and maintained by [Attila Beregszaszi](http://attilab.com/)
 
-
-## License
-
-Copyright (c) 2015 Attila Beregszaszi
-Licensed under the MIT license.
-
-## Plug
-
-Development was sponsored by [Front Seed Labs](http://frontseed.com/) and
-[Dennis Publishing](http://www.dennis.co.uk/)
+Development sponsored by [Dennis Publishing](http://www.dennis.co.uk/) and [Front Seed Labs](http://frontseed.com/)
