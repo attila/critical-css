@@ -1,3 +1,7 @@
+**This repository is now archived. Note that plenty of other techniques emerged over the years, most of which are much better suited to your potential performance optimisation needs.**
+
+---
+
 # Critical CSS
 
 [![Build Status](https://api.travis-ci.org/attila/critical-css.svg?branch=master)](https://travis-ci.org/attila/critical-css)
